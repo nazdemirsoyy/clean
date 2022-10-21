@@ -69,16 +69,6 @@ occNum list = (auxOccNum list list)
  e.g: [1,5,8] = [1,3,5,7,9]
 */
 
-//??
-
-gap21 :: [Int] -> [Int]
-gap21 [] = []
-gap21 [x] = [x]
-gap21 [x,y : xs] 
-|y - x == 2 = [x,y:gap21 xs] 
-|y - x <> 2 = [x,x+2,y:gap21  xs]
-= gap21 xs
-
 gap2 :: [Int] -> [Int]
 gap2 [] = []
 gap2 list = [(hd list),((hd list)+2)..((last list)+1)]
