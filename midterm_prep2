@@ -68,6 +68,15 @@ f1 n
 |(n rem 4 == 0 && n rem 100 <> 0) || (n rem 400 == 0)= n
 = f1 (n+1)
 
+//////////////////////////
+isLeap::Int -> Bool
+isLeap x
+| x rem 4 <> 0 = False
+| x rem 100 <> 0 = True
+| x rem 400 <> 0 = False
+= True
+
+
 //Start = LeapYears 1999 4 // [2000,2004,2008,2012]
 //Start = LeapYears 1804 7 //[1808,1812,1816,1820,1824,1828,1832]
 //Start = LeapYears -2000 4 //[]
