@@ -286,3 +286,26 @@ classesOnDay list day = map (\x= x.className)(filter (\x = dayEqual x.day day) l
 
 //Start = classesOnDay [Math,IMP,CS,PRO,FP] Fri
 
+:: Student = {name :: String
+             ,id :: String
+             ,grades :: {Int}}
+
+/* 
+ * Write a function oddStudents that takes array of students, and returns the names of the oddStudents.
+ * A student is odd if
+ * the sum of their grades is smaller than 100 and is an odd number.
+ */
+
+oddStudents :: {Student} -> [String]
+oddStudents arr = [a.name \\ a<-:arr |sum [b \\ b<-: a.grades] < 100 && isOdd  (sum [b \\ b<-: a.grades])  ]
+
+// Intended for tests. Do not remove!
+student1 = {name="a",id="st1",grades={20,40,13}}
+student2 = {name="b",id="st2",grades={50,13,10,42}}
+student3 = {name="c",id="st3",grades={13,70}}
+student4 = {name="d",id="st4",grades={}}
+
+//Start = oddStudents {} // []
+// Start = oddStudents {student1} // ["a"]
+//Start = oddStudents {student1, student2, student3, student4} // ["a","c"]
+//Start = oddStudents {student4} // []
