@@ -239,3 +239,50 @@ where
 //lowest mark.uni {Mark,Jane,David,David2,Leo,Ana,Sara}
 
 
+::Day = Mon|Tue|Wed|Thu|Fri | Sat|Sun
+
+::Exam =  Midterm|Endterm|MidtermRetake|EndtermRetake
+
+//Given two exams, check if they are the same
+
+
+compareExams :: Exam Exam ->Bool
+compareExams Midterm Midterm = True
+compareExams Endterm Endterm = True
+compareExams MidtermRetake MidtermRetake = True
+compareExams EndtermRetake EndtermRetake = True
+compareExams  _ _ = False
+
+
+//Start = compareExams Midterm Midterm
+//Start = compareExams Midterm Endterm
+
+toString::Exam->String
+toString Midterm = "Midterm"
+
+::Class={className::String,day::Day}
+Math::Class 
+Math = {className = "MATH", day=Mon}
+IMP::Class
+IMP = {className = "IMP", day =Tue}
+FP::Class
+FP = {className = "FP", day = Fri}
+PRO::Class
+PRO = {className = "PRO", day = Mon}
+CS::Class
+CS = {className = "CS", day = Fri}
+
+//5.Given a list of Classes(see above) and a Day n
+//Return a list containing only the Classes that are 
+//held on Day n
+//The compare days function is given
+
+dayEqual :: Day Day -> Bool
+dayEqual Fri Fri = True
+dayEqual _ _ = False
+
+classesOnDay::[Class] Day->[String]
+classesOnDay list day = map (\x= x.className)(filter (\x = dayEqual x.day day) list)
+
+//Start = classesOnDay [Math,IMP,CS,PRO,FP] Fri
+
