@@ -238,6 +238,7 @@ where
 
 //lowest mark.uni {Mark,Jane,David,David2,Leo,Ana,Sara}
 
+//ALGEBRAIC DATA TYPES
 
 ::Day = Mon|Tue|Wed|Thu|Fri | Sat|Sun
 
