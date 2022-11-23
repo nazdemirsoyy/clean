@@ -1,3 +1,6 @@
+module instance
+import StdEnv
+
 //INSTANCES--->
 //Defining the behaviour of some types for different operators
 //Start = "Hello "+"World"
