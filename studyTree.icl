@@ -122,5 +122,13 @@ extractN (Node x l r) = x
 //Start = task3 Tree2 
 //Start = task3 Tree3 
 
+:: Tree2 a = Node2 a (Tree2 a) (Tree2 a)| Leaf2 a
 
+aTree2 = Node2 4 (Node2 2 (Node2 1 (Leaf2 1) (Leaf2 1))(Node2 3 (Leaf2 3) (Leaf2 3))) (Leaf2 5)
+
+nrNodes::(Tree2 a) -> Int
+nrNodes (Leaf2 y) = 1
+nrNodes (Node2 x le ri) = 1 + nrNodes le + nrNodes ri
+
+//Start = nrNodes aTree2 //9
 
